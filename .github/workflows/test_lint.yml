@@ -37,7 +37,6 @@ jobs:
       packages: read
       # To report GitHub Actions status checks
       statuses: write
-    if: github.repository == 'azimuth-cloud/azimuth-sample-appliance'
 
     steps:
       - uses: actions/checkout@v4
