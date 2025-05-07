@@ -182,3 +182,20 @@ To do this, just use a `debug` task with the variable `outputs` set to a diction
 
 For example, this appliance
 [uses the cluster outputs to return the allocated floating IP](./sample-appliance.yml#L29-L34).
+
+
+## Developing locally
+
+Locally run the linters that are run in GitHub Actions using:
+
+```sh
+docker run --rm \
+    -e RUN_LOCAL=true \
+    --env-file "super-linter.env" \
+    -v "$(pwd)":/tmp/lint \
+    ghcr.io/super-linter/super-linter:v7.3.0
+```
+
+```sh
+ansible-lint -c .ansible-lint.yml ansible/
+```
